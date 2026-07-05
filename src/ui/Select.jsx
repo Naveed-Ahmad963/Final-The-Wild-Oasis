@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 const StyledSelect = styled.select`
-  font-size: 1.4rem;
-  padding: 0.8rem 1.2rem;
+  font-size: clamp(1.2rem, 1rem + 0.15vw, 1.4rem);
+  padding: clamp(0.6rem, 0.4rem + 0.3vw, 0.8rem)
+    clamp(0.8rem, 0.6rem + 0.3vw, 1.2rem);
   border: 1px solid
     ${(props) =>
       props.type === "white"

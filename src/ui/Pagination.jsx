@@ -11,8 +11,8 @@ const StyledPagination = styled.div`
 `;
 
 const P = styled.p`
-  font-size: 1.4rem;
-  margin-left: 0.8rem;
+  font-size: clamp(1.2rem, 1rem + 0.15vw, 1.4rem);
+  margin-left: clamp(0.4rem, 0.3rem + 0.2vw, 0.8rem);
 
   & span {
     font-weight: 600;
@@ -21,7 +21,9 @@ const P = styled.p`
 
 const Buttons = styled.div`
   display: flex;
-  gap: 0.6rem;
+  gap: clamp(0.4rem, 0.3rem + 0.2vw, 0.6rem);
+  flex-wrap: wrap;
+  justify-content: flex-end;
 `;
 
 const PaginationButton = styled.button`
@@ -31,26 +33,28 @@ const PaginationButton = styled.button`
   border: none;
   border-radius: var(--border-radius-sm);
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 0.9rem + 0.15vw, 1.4rem);
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  padding: 0.6rem 1.2rem;
+  gap: clamp(0.2rem, 0.1rem + 0.15vw, 0.4rem);
+  padding: clamp(0.4rem, 0.3rem + 0.2vw, 0.6rem)
+    clamp(0.8rem, 0.6rem + 0.3vw, 1.2rem);
   transition: all 0.3s;
+  white-space: nowrap;
 
   &:has(span:last-child) {
-    padding-left: 0.4rem;
+    padding-left: clamp(0.2rem, 0.1rem + 0.15vw, 0.4rem);
   }
 
   &:has(span:first-child) {
-    padding-right: 0.4rem;
+    padding-right: clamp(0.2rem, 0.1rem + 0.15vw, 0.4rem);
   }
 
   & svg {
-    height: 1.8rem;
-    width: 1.8rem;
+    height: clamp(1.4rem, 1.2rem + 0.15vw, 1.8rem);
+    width: clamp(1.4rem, 1.2rem + 0.15vw, 1.8rem);
   }
 
   &:hover:not(:disabled) {

@@ -23,17 +23,19 @@ const StyledBookingDataBox = styled.section`
 
 const Header = styled.header`
   background-color: var(--color-brand-500);
-  padding: 2rem 4rem;
+  padding: clamp(1.2rem, 0.8rem + 1vw, 2rem) clamp(1.6rem, 1rem + 1.5vw, 4rem);
   color: #e0e7ff;
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 1.2rem + 0.2vw, 1.8rem);
   font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 
   svg {
-    height: 3.2rem;
-    width: 3.2rem;
+    height: clamp(2.4rem, 2rem + 0.5vw, 3.2rem);
+    width: clamp(2.4rem, 2rem + 0.5vw, 3.2rem);
   }
 
   & div:first-child {
@@ -41,18 +43,20 @@ const Header = styled.header`
     align-items: center;
     gap: 1.6rem;
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 1.2rem + 0.2vw, 1.8rem);
+    min-width: 0;
   }
 
   & span {
     font-family: "Sono";
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 1.4rem + 0.2vw, 2rem);
     margin-left: 4px;
   }
 `;
 
 const Section = styled.section`
-  padding: 3.2rem 4rem 1.2rem;
+  padding: clamp(1.6rem, 1.2rem + 1vw, 3.2rem) clamp(1.6rem, 1rem + 1.5vw, 4rem)
+    clamp(0.8rem, 0.6rem + 0.5vw, 1.2rem);
 `;
 
 const Guest = styled.div`
@@ -61,6 +65,8 @@ const Guest = styled.div`
   gap: 1.2rem;
   margin-bottom: 1.6rem;
   color: var(--color-grey-500);
+  flex-wrap: wrap;
+  font-size: clamp(1.2rem, 1rem + 0.2vw, 1.4rem);
 
   & p:first-of-type {
     font-weight: 500;
@@ -70,9 +76,12 @@ const Guest = styled.div`
 
 const Price = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 1.6rem 3.2rem;
+  padding: clamp(1.2rem, 0.8rem + 0.8vw, 1.6rem)
+    clamp(1.6rem, 1rem + 1vw, 3.2rem);
   border-radius: var(--border-radius-sm);
   margin-top: 2.4rem;
 
@@ -83,7 +92,7 @@ const Price = styled.div`
 
   & p:last-child {
     text-transform: uppercase;
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 0.9rem + 0.15vw, 1.4rem);
     font-weight: 600;
   }
 
@@ -92,11 +101,17 @@ const Price = styled.div`
     width: 2.4rem;
     color: currentColor !important;
   }
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 const Footer = styled.footer`
-  padding: 1.6rem 4rem;
-  font-size: 1.2rem;
+  padding: clamp(1rem, 0.8rem + 0.5vw, 1.6rem) clamp(1.6rem, 1rem + 1.5vw, 4rem);
+  font-size: clamp(1rem, 0.9rem + 0.15vw, 1.2rem);
   color: var(--color-grey-500);
   text-align: right;
 `;
@@ -169,7 +184,7 @@ function BookingDataBox({ booking }) {
 
             {hasBreakfast &&
               ` (${formatCurrency(cabinPrice)} cabin + ${formatCurrency(
-                extrasPrice
+                extrasPrice,
               )} breakfast)`}
           </DataItem>
 

@@ -4,7 +4,8 @@ const Form = styled.form`
   ${(props) =>
     props.type === "regular" &&
     css`
-      padding: 2.4rem 4rem;
+      padding: clamp(1.6rem, 1.2rem + 1vw, 2.4rem)
+        clamp(2rem, 1.2rem + 1.5vw, 4rem);
 
       /* Box */
       background-color: var(--color-grey-0);
@@ -15,15 +16,15 @@ const Form = styled.form`
   ${(props) =>
     props.type === "modal" &&
     css`
-      width: min(80rem, 100%);
+      width: clamp(28rem, min(80rem, 90vw), 100%);
       max-width: 100%;
     `}
 
   overflow: hidden;
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 1rem + 0.15vw, 1.4rem);
 
   @media (max-width: 768px) {
-    padding: 2rem;
+    padding: clamp(1.2rem, 1rem + 0.8vw, 2rem);
   }
 `;
 

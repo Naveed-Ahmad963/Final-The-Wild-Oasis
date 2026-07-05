@@ -6,15 +6,16 @@ const StyledStat = styled.div`
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
 
-  padding: 1.6rem;
+  padding: clamp(1.2rem, 0.8rem + 0.8vw, 1.6rem);
   display: grid;
-  grid-template-columns: 6.4rem 1fr;
+  grid-template-columns: clamp(5rem, 4rem + 1vw, 6.4rem) 1fr;
   grid-template-rows: auto auto;
-  column-gap: 1.6rem;
+  column-gap: clamp(1.2rem, 0.8rem + 0.8vw, 1.6rem);
   row-gap: 0.4rem;
 
   @media (max-width: 768px) {
-    padding: 1.2rem;
+    padding: clamp(0.8rem, 0.6rem + 0.5vw, 1.2rem);
+    grid-template-columns: clamp(4.5rem, 4rem + 0.8vw, 5.5rem) 1fr;
   }
 `;
 
@@ -29,15 +30,15 @@ const Icon = styled.div`
   background-color: var(--color-${(props) => props.color}-100);
 
   & svg {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: clamp(2.4rem, 2rem + 0.5vw, 3.2rem);
+    height: clamp(2.4rem, 2rem + 0.5vw, 3.2rem);
     color: var(--color-${(props) => props.color}-700);
   }
 `;
 
 const Title = styled.h5`
   align-self: end;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 0.9rem + 0.1vw, 1.2rem);
   text-transform: uppercase;
   letter-spacing: 0.4px;
   font-weight: 600;
@@ -45,7 +46,7 @@ const Title = styled.h5`
 `;
 
 const Value = styled.p`
-  font-size: 2.4rem;
+  font-size: clamp(1.8rem, 1.6rem + 0.3vw, 2.4rem);
   line-height: 1;
   font-weight: 500;
 `;

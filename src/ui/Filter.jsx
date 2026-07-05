@@ -24,10 +24,12 @@ const FilterButton = styled.button`
 
   border-radius: var(--border-radius-sm);
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 1rem + 0.15vw, 1.4rem);
   /* To give the same height as select */
-  padding: 0.44rem 0.8rem;
+  padding: clamp(0.3rem, 0.2rem + 0.2vw, 0.44rem)
+    clamp(0.6rem, 0.4rem + 0.3vw, 0.8rem);
   transition: all 0.3s;
+  white-space: nowrap;
 
   &:hover:not(:disabled) {
     background-color: var(--color-brand-600);

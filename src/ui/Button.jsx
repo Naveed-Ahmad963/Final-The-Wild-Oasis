@@ -2,20 +2,22 @@ import styled, { css } from "styled-components";
 
 const sizes = {
   small: css`
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 0.9rem + 0.1vw, 1.2rem);
     padding: 0.4rem 0.8rem;
     text-transform: uppercase;
     font-weight: 600;
     text-align: center;
   `,
   medium: css`
-    font-size: 1.4rem;
-    padding: 1.2rem 1.6rem;
+    font-size: clamp(1.2rem, 1rem + 0.15vw, 1.4rem);
+    padding: clamp(0.8rem, 0.6rem + 0.3vw, 1.2rem)
+      clamp(1.2rem, 1rem + 0.3vw, 1.6rem);
     font-weight: 500;
   `,
   large: css`
-    font-size: 1.6rem;
-    padding: 1.2rem 2.4rem;
+    font-size: clamp(1.4rem, 1.2rem + 0.2vw, 1.6rem);
+    padding: clamp(0.8rem, 0.6rem + 0.3vw, 1.2rem)
+      clamp(1.6rem, 1.2rem + 0.5vw, 2.4rem);
     font-weight: 500;
   `,
 };
