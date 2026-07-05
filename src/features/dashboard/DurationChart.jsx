@@ -19,6 +19,9 @@ const ChartBox = styled.div`
   padding: clamp(1.6rem, 1rem + 1.2vw, 3.2rem);
   grid-column: span 2;
   min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 
   & > *:first-child {
     margin-bottom: 1.6rem;
@@ -26,6 +29,10 @@ const ChartBox = styled.div`
 
   & .recharts-pie-label-text {
     font-weight: 600;
+  }
+
+  @media (max-width: 1200px) {
+    grid-column: 1 / -1;
   }
 
   @media (max-width: 640px) {

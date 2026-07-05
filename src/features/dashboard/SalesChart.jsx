@@ -16,6 +16,9 @@ import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
   min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 
   /* Hack to change grid line colors */
   & .recharts-cartesian-grid-horizontal line,

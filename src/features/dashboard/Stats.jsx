@@ -25,30 +25,38 @@ function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
 
   return (
     <>
-      <Stat
-        title="Bookings"
-        color="blue"
-        icon={<HiOutlineBriefcase />}
-        value={numBookings}
-      />
-      <Stat
-        title="Sales"
-        color="green"
-        icon={<HiOutlineBanknotes />}
-        value={formatCurrency(sales)}
-      />
-      <Stat
-        title="Check ins"
-        color="indigo"
-        icon={<HiOutlineCalendarDays />}
-        value={checkins}
-      />
-      <Stat
-        title="Occupancy rate"
-        color="yellow"
-        icon={<HiOutlineChartBar />}
-        value={Math.round(occupation * 100) + "%"}
-      />
+      <div style={{ gridColumn: "span 1", minWidth: 0 }}>
+        <Stat
+          title="Bookings"
+          color="blue"
+          icon={<HiOutlineBriefcase />}
+          value={numBookings}
+        />
+      </div>
+      <div style={{ gridColumn: "span 1", minWidth: 0 }}>
+        <Stat
+          title="Sales"
+          color="green"
+          icon={<HiOutlineBanknotes />}
+          value={formatCurrency(sales)}
+        />
+      </div>
+      <div style={{ gridColumn: "span 1", minWidth: 0 }}>
+        <Stat
+          title="Check ins"
+          color="indigo"
+          icon={<HiOutlineCalendarDays />}
+          value={checkins}
+        />
+      </div>
+      <div style={{ gridColumn: "span 1", minWidth: 0 }}>
+        <Stat
+          title="Occupancy rate"
+          color="yellow"
+          icon={<HiOutlineChartBar />}
+          value={Math.round(occupation * 100) + "%"}
+        />
+      </div>
     </>
   );
 }
