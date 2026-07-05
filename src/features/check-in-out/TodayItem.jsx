@@ -7,9 +7,9 @@ import Button from "../../ui/Button";
 import CheckoutButton from "./CheckoutButton";
 
 const StyledTodayItem = styled.li`
-  display: grid;
-  grid-template-columns: 9rem 2rem 1fr 7rem 9rem;
-  gap: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.2rem;
   align-items: center;
 
   font-size: 1.4rem;
@@ -23,6 +23,7 @@ const StyledTodayItem = styled.li`
 
 const Guest = styled.div`
   font-weight: 500;
+  flex: 1 1 18rem;
 `;
 
 function TodayItem({ activity }) {
