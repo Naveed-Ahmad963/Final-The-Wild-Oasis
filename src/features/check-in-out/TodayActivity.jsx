@@ -13,19 +13,15 @@ const StyledToday = styled.div`
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
 
-  padding: 3.2rem;
+  padding: clamp(2rem, 1.2rem + 1vw, 3.2rem);
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  grid-column: 1 / span 2;
-  padding-top: 2.4rem;
+  grid-column: span 2;
+  min-width: 0;
 
   @media (max-width: 1200px) {
     grid-column: 1 / -1;
-  }
-
-  @media (max-width: 768px) {
-    padding: 2.4rem;
   }
 `;
 

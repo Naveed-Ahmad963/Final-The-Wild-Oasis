@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const StyledAppLayout = styled.div`
   display: grid;
-  grid-template-columns: 26rem 1fr;
+  grid-template-columns: minmax(22rem, 26rem) minmax(0, 1fr);
   grid-template-rows: auto 1fr;
   min-height: 100vh;
 
@@ -17,24 +17,16 @@ const StyledAppLayout = styled.div`
 
 const Main = styled.main`
   background-color: var(--color-grey-50);
-  padding: 4rem 4.8rem 6.4rem;
+  padding: clamp(2rem, 1rem + 2vw, 4.8rem) clamp(1.5rem, 0.8rem + 2vw, 4.8rem) clamp(3rem, 1.5rem + 2.5vw, 6.4rem);
   overflow: auto;
-
-  @media (max-width: 1024px) {
-    padding: 2.4rem 2rem 3.2rem;
-  }
 `;
 
 const Container = styled.div`
-  max-width: 120rem;
+  width: min(120rem, 100%);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
-
-  @media (max-width: 768px) {
-    gap: 2.4rem;
-  }
+  gap: clamp(2rem, 1.5rem + 1vw, 3.2rem);
 `;
 
 function AppLayout() {

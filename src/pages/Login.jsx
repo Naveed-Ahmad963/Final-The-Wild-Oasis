@@ -9,9 +9,9 @@ const LoginLayout = styled.main`
   grid-template-columns: minmax(28rem, 48rem);
   align-content: center;
   justify-content: center;
-  gap: 3.2rem;
+  gap: clamp(2rem, 1.5rem + 1vw, 3.2rem);
   background-color: var(--color-grey-50);
-  padding: 2.4rem;
+  padding: clamp(2rem, 1rem + 2vw, 3.2rem);
 `;
 
 function Login() {

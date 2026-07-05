@@ -120,7 +120,12 @@ body {
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
   line-height: 1.5;
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 1.2rem + 0.2vw, 1.6rem);
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 input,

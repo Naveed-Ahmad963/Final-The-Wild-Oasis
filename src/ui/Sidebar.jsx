@@ -4,7 +4,7 @@ import MainNav from "./MainNav";
 
 const StyledSidebar = styled.aside`
   background-color: var(--color-grey-0);
-  padding: 3.2rem 2.4rem;
+  padding: clamp(2rem, 1.2rem + 1vw, 3.2rem) clamp(1.2rem, 0.8rem + 1vw, 2.4rem);
   border-right: 1px solid var(--color-grey-100);
 
   grid-row: 1 / -1;

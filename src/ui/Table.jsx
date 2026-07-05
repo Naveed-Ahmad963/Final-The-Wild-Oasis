@@ -1,7 +1,13 @@
 import { createContext, useContext } from "react";
 import styled from "styled-components";
 
+const ResponsiveTable = styled.div`
+  width: 100%;
+  overflow-x: auto;
+`;
+
 const StyledTable = styled.div`
+  min-width: 62rem;
   border: 1px solid var(--color-grey-200);
 
   font-size: 1.4rem;
@@ -65,7 +71,9 @@ const TableContext = createContext();
 function Table({ columns, children }) {
   return (
     <TableContext.Provider value={{ columns }}>
-      <StyledTable role="table">{children}</StyledTable>
+      <ResponsiveTable>
+        <StyledTable role="table">{children}</StyledTable>
+      </ResponsiveTable>
     </TableContext.Provider>
   );
 }
