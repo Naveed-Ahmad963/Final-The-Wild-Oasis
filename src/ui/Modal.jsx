@@ -12,8 +12,11 @@ const StyledModal = styled.div`
   background-color: var(--color-grey-0);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
-  padding: 3.2rem 4rem;
+  padding: clamp(1.6rem, 1.2rem + 1vw, 3.2rem) clamp(2rem, 1.2rem + 1.5vw, 4rem);
   transition: all 0.5s;
+  max-width: min(90vw, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
 `;
 
 const Overlay = styled.div`
@@ -26,29 +29,31 @@ const Overlay = styled.div`
   backdrop-filter: blur(4px);
   z-index: 1000;
   transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 `;
 
 const Button = styled.button`
   background: none;
   border: none;
-  padding: 0.4rem;
+  padding: clamp(0.2rem, 0.1rem + 0.2vw, 0.4rem);
   border-radius: var(--border-radius-sm);
-  transform: translateX(0.8rem);
+  transform: translateX(clamp(0.4rem, 0.3rem + 0.2vw, 0.8rem));
   transition: all 0.2s;
   position: absolute;
-  top: 1.2rem;
-  right: 1.9rem;
+  top: clamp(0.8rem, 0.6rem + 0.5vw, 1.2rem);
+  right: clamp(1.2rem, 1rem + 0.5vw, 1.9rem);
+  flex-shrink: 0;
 
   &:hover {
     background-color: var(--color-grey-100);
   }
 
   & svg {
-    width: 2.4rem;
-    height: 2.4rem;
-    /* Sometimes we need both */
-    /* fill: var(--color-grey-500);
-    stroke: var(--color-grey-500); */
+    width: clamp(2rem, 1.8rem + 0.2vw, 2.4rem);
+    height: clamp(2rem, 1.8rem + 0.2vw, 2.4rem);
     color: var(--color-grey-500);
   }
 `;

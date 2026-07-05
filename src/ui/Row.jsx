@@ -11,14 +11,14 @@ const Row = styled.div`
     css`
       justify-content: space-between;
       align-items: center;
-      gap: 1.2rem;
+      gap: clamp(0.8rem, 0.6rem + 0.5vw, 1.2rem);
     `}
 
   ${(props) =>
     props.type === "vertical" &&
     css`
       flex-direction: column;
-      gap: 1.6rem;
+      gap: clamp(1.2rem, 1rem + 0.3vw, 1.6rem);
     `}
 `;
 

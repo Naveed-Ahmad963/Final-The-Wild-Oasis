@@ -10,14 +10,14 @@ const StyledSidebar = styled.aside`
   grid-row: 1 / -1;
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: clamp(2.4rem, 2rem + 0.5vw, 3.2rem);
 
   @media (max-width: 1024px) {
     grid-row: auto;
     grid-column: 1 / -1;
     border-right: none;
     border-bottom: 1px solid var(--color-grey-100);
-    padding: 2.4rem;
+    padding: clamp(1.6rem, 1.2rem + 1vw, 2.4rem);
   }
 `;
 
