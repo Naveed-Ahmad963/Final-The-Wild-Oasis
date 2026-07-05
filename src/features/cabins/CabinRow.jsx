@@ -32,21 +32,24 @@ const Img = styled.img`
 `;
 
 const Cabin = styled.div`
-  font-size: 1.6rem;
+  font-size: clamp(1.3rem, 1.1rem + 0.2vw, 1.6rem);
   font-weight: 600;
   color: var(--color-grey-600);
   font-family: "Sono";
+  min-width: 0;
 `;
 
 const Price = styled.div`
   font-family: "Sono";
   font-weight: 600;
+  min-width: 0;
 `;
 
 const Discount = styled.div`
   font-family: "Sono";
   font-weight: 500;
   color: var(--color-green-700);
+  min-width: 0;
 `;
 
 function CabinRow({ cabin }) {

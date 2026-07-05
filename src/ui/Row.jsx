@@ -2,12 +2,16 @@ import styled, { css } from "styled-components";
 
 const Row = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-width: 0;
 
   ${(props) =>
     props.type === "horizontal" &&
     css`
       justify-content: space-between;
       align-items: center;
+      gap: 1.2rem;
     `}
 
   ${(props) =>

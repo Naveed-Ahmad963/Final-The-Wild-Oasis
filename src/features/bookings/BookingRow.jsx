@@ -20,30 +20,35 @@ import { useCheckout } from "../check-in-out/useCheckout";
 import { useDeleteBooking } from "./useDeleteBooking";
 
 const Cabin = styled.div`
-  font-size: 1.6rem;
+  font-size: clamp(1.3rem, 1.1rem + 0.2vw, 1.6rem);
   font-weight: 600;
   color: var(--color-grey-600);
   font-family: "Sono";
+  min-width: 0;
 `;
 
 const Stacked = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  min-width: 0;
 
   & span:first-child {
     font-weight: 500;
+    overflow-wrap: anywhere;
   }
 
   & span:last-child {
     color: var(--color-grey-500);
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 0.9rem + 0.1vw, 1.2rem);
+    overflow-wrap: anywhere;
   }
 `;
 
 const Amount = styled.div`
   font-family: "Sono";
   font-weight: 500;
+  min-width: 0;
 `;
 
 function BookingRow({
