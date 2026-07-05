@@ -16,8 +16,9 @@ const ChartBox = styled.div`
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
 
-  padding: 2.4rem 3.2rem;
-  grid-column: 3 / span 2;
+  padding: clamp(1.6rem, 1rem + 1.2vw, 3.2rem);
+  grid-column: span 2;
+  min-width: 0;
 
   & > *:first-child {
     margin-bottom: 1.6rem;
@@ -25,6 +26,10 @@ const ChartBox = styled.div`
 
   & .recharts-pie-label-text {
     font-weight: 600;
+  }
+
+  @media (max-width: 640px) {
+    grid-column: 1 / -1;
   }
 `;
 
@@ -119,7 +124,7 @@ function prepareData(startData, stays) {
 
   function incArrayValue(arr, field) {
     return arr.map((obj) =>
-      obj.duration === field ? { ...obj, value: obj.value + 1 } : obj
+      obj.duration === field ? { ...obj, value: obj.value + 1 } : obj,
     );
   }
 

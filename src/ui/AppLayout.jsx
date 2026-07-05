@@ -17,7 +17,8 @@ const StyledAppLayout = styled.div`
 
 const Main = styled.main`
   background-color: var(--color-grey-50);
-  padding: clamp(2rem, 1rem + 2vw, 4.8rem) clamp(1.5rem, 0.8rem + 2vw, 4.8rem) clamp(3rem, 1.5rem + 2.5vw, 6.4rem);
+  padding: clamp(2rem, 1rem + 2vw, 4.8rem) clamp(1.5rem, 0.8rem + 2vw, 4.8rem)
+    clamp(3rem, 1.5rem + 2.5vw, 6.4rem);
   overflow: auto;
 `;
 

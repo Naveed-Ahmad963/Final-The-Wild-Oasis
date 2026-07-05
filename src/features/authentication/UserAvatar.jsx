@@ -6,19 +6,21 @@ const StyledUserAvatar = styled.div`
   gap: 1.2rem;
   align-items: center;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 1rem + 0.2vw, 1.4rem);
   color: var(--color-grey-600);
+  min-width: 0;
 `;
 
 const Avatar = styled.img`
   display: block;
-  width: 4rem;
   width: 3.6rem;
+  max-width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
   outline: 2px solid var(--color-grey-100);
+  flex-shrink: 0;
 `;
 
 function UserAvatar() {
