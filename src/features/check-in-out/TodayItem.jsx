@@ -9,11 +9,11 @@ import CheckoutButton from "./CheckoutButton";
 const StyledTodayItem = styled.li`
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 1.2rem;
+  gap: clamp(0.8rem, 0.6rem + 0.5vw, 1rem) clamp(0.8rem, 0.6rem + 0.5vw, 1.2rem);
   align-items: center;
 
-  font-size: 1.4rem;
-  padding: 0.8rem 0;
+  font-size: clamp(1.2rem, 1rem + 0.15vw, 1.4rem);
+  padding: clamp(0.6rem, 0.4rem + 0.3vw, 0.8rem) 0;
   border-bottom: 1px solid var(--color-grey-100);
 
   &:first-child {
@@ -23,7 +23,8 @@ const StyledTodayItem = styled.li`
 
 const Guest = styled.div`
   font-weight: 500;
-  flex: 1 1 18rem;
+  flex: 1 1 clamp(14rem, 15vw, 18rem);
+  min-width: 0;
 `;
 
 function TodayItem({ activity }) {
