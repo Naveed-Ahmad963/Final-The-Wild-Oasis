@@ -122,6 +122,12 @@ body {
   line-height: 1.5;
   font-size: clamp(1.4rem, 1.2rem + 0.2vw, 1.6rem);
   overflow-x: hidden;
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 #root {

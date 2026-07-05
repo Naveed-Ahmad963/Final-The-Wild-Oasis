@@ -1,22 +1,49 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import {
+  HiBars3,
   HiOutlineCalendarDays,
   HiOutlineCog6Tooth,
   HiOutlineHome,
   HiOutlineHomeModern,
   HiOutlineUsers,
+  HiXMark,
 } from "react-icons/hi2";
+
+const NavWrapper = styled.nav`
+  width: 100%;
+`;
+
+const MobileToggle = styled.button`
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-grey-200);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-grey-0);
+  color: var(--color-grey-700);
+  font-weight: 600;
+  min-height: 3.2rem;
+
+  @media (max-width: 1024px) {
+    display: inline-flex;
+  }
+`;
 
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: clamp(0.6rem, 0.4rem + 0.3vw, 0.8rem);
+  gap: clamp(0.4rem, 0.3rem + 0.2vw, 0.6rem);
 
   @media (max-width: 1024px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: clamp(0.6rem, 0.4rem + 0.3vw, 0.8rem);
+    display: ${(props) => (props.open ? "flex" : "none")};
+    flex-direction: column;
+    margin-top: 0.8rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid var(--color-grey-100);
   }
 `;
 
@@ -67,41 +94,50 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 function MainNav() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav>
-      <NavList>
+    <NavWrapper>
+      <MobileToggle onClick={() => setIsOpen((open) => !open)}>
+        {isOpen ? <HiXMark /> : <HiBars3 />}
+        <span style={{ marginLeft: "0.6rem" }}>
+          {isOpen ? "Close" : "Menu"}
+        </span>
+      </MobileToggle>
+
+      <NavList open={isOpen}>
         <li>
-          <StyledNavLink to="/dashboard">
+          <StyledNavLink to="/dashboard" onClick={() => setIsOpen(false)}>
             <HiOutlineHome />
             <span>Home</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/bookings">
+          <StyledNavLink to="/bookings" onClick={() => setIsOpen(false)}>
             <HiOutlineCalendarDays />
             <span>Bookings</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/cabins">
+          <StyledNavLink to="/cabins" onClick={() => setIsOpen(false)}>
             <HiOutlineHomeModern />
             <span>Cabins</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/users">
+          <StyledNavLink to="/users" onClick={() => setIsOpen(false)}>
             <HiOutlineUsers />
             <span>Users</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/settings">
+          <StyledNavLink to="/settings" onClick={() => setIsOpen(false)}>
             <HiOutlineCog6Tooth />
             <span>Settings</span>
           </StyledNavLink>
         </li>
       </NavList>
-    </nav>
+    </NavWrapper>
   );
 }
 

@@ -28,7 +28,7 @@ const StyledFormRow = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: clamp(0.8rem, 0.6rem + 0.5vw, 1.2rem);
+    gap: clamp(0.6rem, 0.4rem + 0.4vw, 0.8rem);
 
     &:has(button) {
       flex-direction: column;

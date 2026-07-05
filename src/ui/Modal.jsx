@@ -14,9 +14,11 @@ const StyledModal = styled.div`
   box-shadow: var(--shadow-lg);
   padding: clamp(1.6rem, 1.2rem + 1vw, 3.2rem) clamp(2rem, 1.2rem + 1.5vw, 4rem);
   transition: all 0.5s;
-  max-width: min(90vw, 100%);
+  width: min(92vw, 56rem);
+  max-width: 100%;
   max-height: 90vh;
   overflow-y: auto;
+  overscroll-behavior: contain;
 `;
 
 const Overlay = styled.div`
@@ -32,7 +34,7 @@ const Overlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.8rem;
 `;
 
 const Button = styled.button`

@@ -54,6 +54,8 @@ const Button = styled.button`
   border: none;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
+  min-height: clamp(3rem, 2.6rem + 0.4vw, 3.6rem);
+  width: 100%;
 
   ${(props) => sizes[props.size]}
   ${(props) => variations[props.variation]}

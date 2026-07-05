@@ -4,8 +4,7 @@ const Form = styled.form`
   ${(props) =>
     props.type === "regular" &&
     css`
-      padding: clamp(1.6rem, 1.2rem + 1vw, 2.4rem)
-        clamp(2rem, 1.2rem + 1.5vw, 4rem);
+      padding: clamp(1rem, 0.8rem + 1vw, 1.6rem) clamp(1rem, 0.8rem + 1vw, 2rem);
 
       /* Box */
       background-color: var(--color-grey-0);

@@ -4,10 +4,11 @@ import styled from "styled-components";
 const ResponsiveTable = styled.div`
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 `;
 
 const StyledTable = styled.div`
-  min-width: min(62rem, 100%);
+  min-width: min(72rem, 100%);
   border: 1px solid var(--color-grey-200);
 
   font-size: clamp(1.2rem, 1rem + 0.2vw, 1.4rem);
